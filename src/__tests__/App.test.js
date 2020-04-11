@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, act } from "@testing-library/react";
+import { render, fireEvent, act, getByTitle } from "@testing-library/react";
 import MockAdapter from "axios-mock-adapter";
 import api from "../services/api";
 
@@ -19,7 +19,7 @@ const actWait = async (amount = 0) => {
 
 describe("App component", () => {
   it("should be able to add new repository", async () => {
-    const { getByText, getByTestId } = render(<App />);
+    const { getByText, getByTitle, getByTestId } = render(<App />);
 
     apiMock.onGet("repositories").reply(200, []);
 
@@ -32,7 +32,7 @@ describe("App component", () => {
 
     await actWait();
 
-    fireEvent.click(getByText("Adicionar"));
+    fireEvent.click(getByTitle("Adicionar"));
 
     await actWait();
 
@@ -42,7 +42,7 @@ describe("App component", () => {
   });
 
   it("should be able to remove repository", async () => {
-    const { getByText, getByTestId } = render(<App />);
+    const { getByText, getByTitle, getByTestId } = render(<App />);
 
     apiMock.onGet("repositories").reply(200, [
       {
@@ -57,7 +57,7 @@ describe("App component", () => {
 
     await actWait();
 
-    fireEvent.click(getByText("Remover"));
+    fireEvent.click(getByTitle("Remover"));
 
     await actWait();
 

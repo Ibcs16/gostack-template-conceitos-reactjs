@@ -5,35 +5,198 @@
 }
 
 body {
-  font-size: 14px;
+  background: #F0F4F7;
+  color: #fff;
+  font-family: 'Roboto';
+  text-align: center;
 }
 
-div {
-  width: 100%;
-  margin: 20px;
+.main {
+  margin: 0 auto;
+  width: 400px;
+  max-width: 100%;
 }
 
-div li {
+
+
+.userInfo {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #3A2BB8;
+  width: 100%;
+  margin: 20px auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 20px;
+}
+
+.userInfo .user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-div li + li {
-  margin-top: 15px;
+.userInfo .user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+  
 }
+
+.userInfo .user img, .userInfo .user h4, .userInfo .user h3 {
+  margin-bottom: 10px;
+}
+
+.userInfo .user h4 {
+  margin-bottom: 30px;
+}
+
+.userInfo .actions button {
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+  /* border: 1px solid black; */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.actions {
+  height: 60px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.userInfo .actions button {
+  color: white;
+}
+
+#userName {
+  opacity: .52;
+}
+
 
 button {
-  background: #7159c1;
-  color: #fff;
-  border: 0;
-  padding: 10px 15px;
+  background: white;
+  border: none;
   cursor: pointer;
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 14px;
+  outline: 0;
 }
 
-div li button {
-  margin: 0 15px;
-  background: #ca4949;
+.divider {
+  margin-top: 70px;
 }
+
+
+.divider h3 {
+  color: #3A2BB8;
+  position: relative;
+}
+
+.divider h3::before {
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #3A2BB8;
+  opacity: .2;
+}
+
+.divider h3::after {
+  position: absolute;
+  right: 0;
+  top: .8rem;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #3A2BB8;
+  opacity: .2;
+}
+
+.repositoryList {
+  margin-top: 1rem;
+}
+
+ul, ul.repositoryList li {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.repositoryList > li {
+  /* min-height: 100px; */
+  padding: 20px;
+  background: #3A2BB8;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.repositoryList > li .actions {
+ 
+  position: absolute;
+  right: -18px;
+  top: 50px;
+}
+
+.repositoryList > li .actions button{
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#repoUrl {
+  opacity: .52;
+  font-weight: 200;
+}
+
+.techsList {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.techsList li {
+  padding: 2px 2px;
+  max-width: 5rem;
+  background: white;
+  margin-right: .5rem;
+  color: rgba(51, 51, 51, 0.6);
+  border-radius: 6px;
+}
+
+.repositoryList a {
+  text-decoration: none;
+  color: white;
+}
+
+#noRepoWarning {
+  margin-top: 2rem;
+  color: #3A2BB8;
+  opacity: .7;
+}
+
+.fade-in {
+  animation: fadeIn ease 500ms;
+  -webkit-animation: fadeIn ease 500ms;
+  -moz-animation: fadeIn ease 500ms;
+  -o-animation: fadeIn ease 500ms;
+  -ms-animation: fadeIn ease 500ms;
+}
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
