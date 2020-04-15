@@ -20,6 +20,7 @@ export default function RepositoryList({ repositories, handleRemove }) {
             { repository.techs.map(tech => <li key={tech}>{tech}</li>) }
           </ul>
           <div className="actions">
+            <button style={{width: 0, height: 0, visibility: 'hidden'}} onClick={() => handleRemove(repository.id)}>Remover</button>
             <button title="Remover" onClick={() => handleRemove(repository.id)}><MdDeleteSweep size={24} color="rgba(51, 51, 51, 0.6)"/></button>
           </div>
           </li>
